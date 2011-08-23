@@ -1,0 +1,21 @@
+{% load url from future %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>{% block title %}{% endblock %}</title>
+    {% block include %}{% endblock %}
+  </head>
+  <body>
+    <header>
+      <a href="{% url 'index_path' %}">Anasayfa</a>
+      <hr />
+    </header>
+    <div id="main">
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>

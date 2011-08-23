@@ -1,0 +1,31 @@
+{% extends 'main.html' %}
+
+
+{% block title %} {{ user.username }} {% endblock %}
+
+{% block content %}
+	<h3>{{ user.username }}</h3>
+	<div>
+		<table>
+			<tr>
+				<td>
+					web
+				</td>
+				<td>
+					<a href="{{ user.get_profile.web }}">{{ user.get_profile.web }}</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					bio
+				</td>
+				<td>
+					{% if not user.get_profile.bio %}
+						{% load webdesign %}
+						{% lorem 3 p %}
+					{% endif %}
+				</td>
+			</tr>
+		</table>
+	</div>
+{% endblock %}

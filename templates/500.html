@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+{% load url from future %}
+
+{% block title %}500 - Sayfa bulunamadı. {% endblock %}
+
+{% block content %}
+<h1>500 - Sayfa bulunamadı.</h1>
+
+Gezintiye kaldığınız yerden devam etmek için
+<ul>
+  <li><a href="{% url 'index_path' %}">Anasayfa</a></li>
+</ul>
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends 'main.html' %}
+{% load url from future %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% if post.has_code %}
+	{% block include %} {# <head></head> arasına gidiyor. #}
+		<script src=""></script>
+	{% endblock %}
+{% endif %}
+
+{% block content %}
+<h1>{{ post.title }} - <a href="{% url 'show_profile' post.sender.username %}">{{ post.sender.username }}</a></h1>
+
+<div>
+  {{ post.content }}
+</div>
+
+Etiketler:
+{% for label in post.labels.all %}
+	{{ label.title }}, 
+{% endfor %}
+
+{% endblock %}
