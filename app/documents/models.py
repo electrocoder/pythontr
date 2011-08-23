@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 from django.db import models
-from settings import MEDIA_URL
+from pythontr.settings import MEDIA_URL
 
 class Document(models.Model):
 	"""
