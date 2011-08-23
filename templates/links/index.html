@@ -1,0 +1,15 @@
+{% extends 'main.html' %}
+
+{% block title %} Linkler {% endblock %}
+
+{% block content %}
+ <ul>
+   {% for link in links %}
+    <li>
+      <a href="{{ link.url }}" {{ link.insert_target }}>{{ link.visible_name }}</a>
+    </li>
+    {% endfor %}
+
+ </ul>
+
+{% endblock %}

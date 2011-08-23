@@ -6,7 +6,7 @@ from django.core.urlresolvers import reverse
 from django.views.decorators.cache import cache_page
 from django.http import Http404
 
-from pythontr.app.posts.models import Post, Topic
+from pythontr.app.posts.models import Post, Topic, Tag
 
 #@cache_page(30)
 def index(request, page=1):
@@ -77,3 +77,26 @@ def show_topic(request, slug):
     
     return render(request, 'posts/show_topic.html', response_dict)
     
+
+
+def show_posts_with_tag(request, slug):
+    """
+    Verilen slug ile etiketlenene gönderileri ( Post modeli)
+    buluyor.
+    """
+    
+    try:
+        tag = get_object_or_404(Tag, slug = slug)
+        posts = Post.objects.filter(tags__slug__contains = slug)
+    except:
+        raise Http404
+
+    response_dict = {
+        'posts': posts,
+        'tag': tag,
+        }
+    
+    return render(request,
+                  'posts/show_posts_with_tag.html', 
+                  response_dict
+                  )

@@ -3,19 +3,26 @@
 
 from django.contrib import admin
 
-from pythontr.app.posts.models import Post, Topic
+from pythontr.app.posts.models import Post, Topic, Tag
+
+class TagAdmin(admin.ModelAdmin):
+
+    
+    prepopulated_fields = {'slug': ('title', )}
 
 
 class PostAdmin(admin.ModelAdmin):
+
+
     prepopulated_fields = {'slug': ('title', )}
     
     actions = ['make_published', 'unpublish']
 
     fieldsets = (
         ('Gönderen bilgileri', {'fields': ('sender',)}),
-        ('Başlık bilgileri', {'fields': ('title', 'slug', 'topic') }),
+        ('Başlık bilgileri', {'fields': ('topic', 'title', 'slug') }),
         ('İçerik bilgileri', {'fields': ('content', 'published', 'has_code')}),
-        ('Etiketler ve tarih bilgileri', {'fields': ('labels', )}),
+        ('Etiketler ve tarih bilgileri', {'fields': ('tags', )}),
         )
 
     list_filter = ('published', 'updated_at', 'created_at', 'has_code')
@@ -45,3 +52,4 @@ class TopicAdmin(admin.ModelAdmin):
 
 admin.site.register(Post, PostAdmin)
 admin.site.register(Topic, TopicAdmin)
+admin.site.register(Tag, TagAdmin)

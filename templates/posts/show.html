@@ -17,8 +17,10 @@
 </div>
 
 Etiketler:
-{% for label in post.labels.all %}
-	{{ label.title }}, 
+<ul>
+{% for tag in post.tags.all %}
+	<li><a href="{{ tag.get_absolute_url }}">{{ tag.title }}</a></li>
 {% endfor %}
+</ul>
 
 {% endblock %}

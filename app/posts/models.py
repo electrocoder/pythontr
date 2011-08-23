@@ -5,7 +5,34 @@ from django.core.urlresolvers import reverse
 from django.contrib.auth.models import User
 
 
-from pythontr.app.labels.models import Label
+class Tag(models.Model):
+    """
+    Blog için etiket modeli.
+    """
+
+
+    title = models.CharField(
+        verbose_name = "Başlık",
+        max_length = 100,
+        unique = True,
+        )
+
+    slug = models.SlugField(
+        verbose_name = "Link",
+        )
+
+    def __unicode__(self):
+        return self.title
+
+
+    def get_absolute_url(self):
+        return reverse('show_posts_with_tag_path', args=(self.slug, ))
+
+    class Meta:
+
+
+        verbose_name = "Etiket"
+        verbose_name_plural = "Etiketler"
 
 
 class Topic(models.Model):
@@ -65,7 +92,7 @@ class Post(models.Model):
     eğer seçilirse, yazı yayınlanırken Google code renklendirme
     javascript kütüphanesi include edilecektir.
 
-    'labels' gönderinin sahip olduğu etiketleri tutar.
+    'tags' gönderinin sahip olduğu etiketleri tutar.
     
     """
     
@@ -110,8 +137,8 @@ class Post(models.Model):
         default = False,
         )
 
-    labels = models.ManyToManyField(
-        Label,
+    tags = models.ManyToManyField(
+        Tag,
         verbose_name = "Etiketler",
         help_text = "Gönderinin etiketleri",
         null = True,

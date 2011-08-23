@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block title %} {{ tag.title }} ile etiketlenmiş gönderiler ... {% endblock %}
+
+{% block content %}
+
+<h3> {{ tag.title }} ile etiketlenmiş gönderiler </h3>
+<ul>
+  {% for post in posts %}
+    <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

@@ -109,8 +109,8 @@ INSTALLED_APPS = (
     'django.contrib.flatpages',
     'django.contrib.webdesign',
 
+    'pythontr.app.links',
     'pythontr.app.posts',
-    'pythontr.app.labels',
     'pythontr.app.editors',
     'pythontr.app.documents',
 )
