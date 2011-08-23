@@ -11,10 +11,9 @@ from feeds.feeds import PostFeed, DocumentFeed
 
 urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
+
                        url(r'^', include('pythontr.app.posts.urls')),
                        url(r'^user/', include('pythontr.app.editors.urls')),
-
-
 
                        url(r'^rss/posts/$', PostFeed()),
                        url(r'^rss/documents/$', DocumentFeed()),
