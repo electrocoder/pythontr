@@ -9,21 +9,26 @@
 		<table>
 			<tr>
 				<td>
-					web
+					Resim
 				</td>
 				<td>
-					<a href="{{ user.get_profile.web }}">{{ user.get_profile.web }}</a>
+					<img src="{{ user.get_profile.image_url }}" />
 				</td>
 			</tr>
 			<tr>
 				<td>
-					bio
+					Web adresi
 				</td>
 				<td>
-					{% if not user.get_profile.bio %}
-						{% load webdesign %}
-						{% lorem 3 p %}
-					{% endif %}
+					<a href="{{ user.get_profile.web }}" target=_blank>{{ user.get_profile.web }}</a>
+				</td>
+			</tr>
+			<tr>
+				<td>
+					Kısa Açıklama
+				</td>
+				<td>
+					{{ user.get_profile.bio }}
 				</td>
 			</tr>
 		</table>
