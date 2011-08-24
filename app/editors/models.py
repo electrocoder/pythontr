@@ -6,7 +6,14 @@ from django.contrib.auth.models import User
 from django.core.urlresolvers import reverse
 
 
+from pythontr.settings import MEDIA_URL
+
 class Editor(models.Model):
+    """
+    Gönderileri yazan editörler için oluşturulmuş model.
+    
+    Henüz taslak aşamasında.
+    """
     
 
     user = models.OneToOneField(
@@ -34,7 +41,10 @@ class Editor(models.Model):
     def __unicode__(self):
         return self.user.username
 
-        
+    
+    def image_url(self):
+        return self.photo.url
+    
     class Meta:
         ordering = ['-user__username']
         verbose_name = "Editör"
