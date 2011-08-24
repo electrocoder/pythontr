@@ -10,14 +10,18 @@ admin.autodiscover()
 from feeds.feeds import PostFeed, DocumentFeed
 
 urlpatterns = patterns('',
+                       url(r'^blog/', include('pythontr.app.posts.urls')),
+                       
+                       url(r'^links/', include('pythontr.app.links.urls')),                       
+                       url(r'^accounts/', include('pythontr.app.editors.urls')),
+                       
                        url(r'^admin/', include(admin.site.urls)),
-                       url(r'^links/', include('pythontr.app.links.urls')),
-
+                       
+                       # rss paths
+                       
                        url(r'^rss/posts/$', PostFeed()),
                        url(r'^rss/documents/$', DocumentFeed()),
-
-                       url(r'^', include('pythontr.app.posts.urls')),
-                       url(r'^user/', include('pythontr.app.editors.urls')),
+                       
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
