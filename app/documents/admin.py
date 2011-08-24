@@ -15,5 +15,7 @@ class DocumentAdmin(admin.ModelAdmin):
     list_filter = ('uploaded_at',)
 
     list_display = ('name', 'uploaded_at')
+    
+    search_fields = ['name', 'description']
 
 admin.site.register(Document, DocumentAdmin)
