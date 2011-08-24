@@ -1,4 +1,12 @@
-Pythontr ekibi tarafından üretilen Django temelli pythontr.org sitesindeki
-belge, içerik ve gönderilen kodları düzenlemek için üretiliyor.
+Pythontr ekibi tarafÄ±ndan Ã¼retilen Django temelli pythontr.org sitesindeki
+belge, iÃ§erik ve gÃ¶nderilen kodlarÄ± dÃ¼zenlemek iÃ§in Ã¼retiliyor.
 
-http://py.yigitsadic.com/ adresinde test yayını yapıyor.
+http://py.yigitsadic.com/ adresinde test yayÄ±nÄ± yapÄ±yor.
+
+Önemli
+------
+
+Kullanmadan önce lütfen 'secret' diye bir dosya açın proje klasöründe.
+İçine rastgele rakam, harflerden oluşan bir ifade girin.
+
+"python manage.py syncdb" yapmayı unutmayın.
