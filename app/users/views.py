@@ -13,4 +13,4 @@ def profile(request, username):
         'user': user,
     }
     
-    return render(request, 'editors/profile.html', response_dict)
+    return render(request, 'users/profile.html', response_dict)

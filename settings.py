@@ -46,7 +46,7 @@ USE_I18N = True
 
 USE_L10N = True
 
-AUTH_PROFILE_MODULE = "editors.Editor"
+AUTH_PROFILE_MODULE = "users.Editor"
 
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
@@ -122,7 +122,7 @@ INSTALLED_APPS = (
 
     'pythontr.app.links',
     'pythontr.app.posts',
-    'pythontr.app.editors',
+    'pythontr.app.users',
     'pythontr.app.documents',
 )
 
