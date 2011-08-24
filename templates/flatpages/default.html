@@ -2,4 +2,8 @@
 
 {% block title %} {{ flatpage.title }} {% endblock %}
 
-{% block content %} {{ flatpage.content }} {% endblock %}
+{% block content %}
+  {% autoescape off %} {# Düz HTML kodları kullanılabilecek. #}
+    {{ flatpage.content }}  
+  {% endautoescape %}
+{% endblock %}
