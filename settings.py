@@ -14,15 +14,26 @@ ADMINS = (
 
 MANAGERS = ADMINS
 
+DEVELOPMENT_DB = {
+    'ENGINE': 'sqlite3',
+    'NAME': 'database',
+    'USER': '',
+    'PASSWORD': '',
+    'HOST': '',
+    'PORT': '',
+}
+
+PRODUCTION_DB = {
+    'ENGINE': '',
+    'NAME': '',
+    'USER': '',
+    'PASSWORD': '',
+    'HOST': '',
+    'PORT': ''
+}
+
 DATABASES = {
-    'default': {
-        'ENGINE': 'sqlite3',
-        'NAME': 'database',
-        'USER': '',
-        'PASSWORD': '',
-        'HOST': '',
-        'PORT': '',
-    }
+    'default': DEVELOPMENT_DB,
 }
 
 TIME_ZONE = 'Europe/Istanbul'
