@@ -14,6 +14,13 @@ class Document(models.Model):
 		max_length = 200,
 		verbose_name = "Adı",
 		help_text = "Belge adı",
+		unique = True,
+		)
+		
+		
+	slug = models.SlugField(
+		verbose_name = "Belge linki",
+		help_text = "Bu alan otomatik oluşturulur.",
 		)
 		
 
@@ -49,6 +56,9 @@ class Document(models.Model):
 
 
         def get_absolute_url(self):
+        	# app/documents/views.py show fonksiyonunun urlsini kullan.
+        	# docfile.url şeklinde ulaşabilirsin indirme linkine.
+        	
                 return "%s%s" % (MEDIA_URL, self.docfile)
 
 
