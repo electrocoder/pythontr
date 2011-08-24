@@ -122,7 +122,7 @@ class Post(models.Model):
 
     content = models.TextField(
         verbose_name = "İçerik",
-        help_text = "Bu alana gönderi içeriği girilir."
+        help_text = "Kodları renklendirmek için kodları <code><pre class='prettyprint'></pre></code> taglarını kullanın."
         )
 
     published = models.BooleanField(
