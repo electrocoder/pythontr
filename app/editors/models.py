@@ -42,9 +42,6 @@ class Editor(models.Model):
         return self.user.username
 
     
-    def image_url(self):
-        return self.photo.url
-    
     class Meta:
         ordering = ['-user__username']
         verbose_name = "Editör"
