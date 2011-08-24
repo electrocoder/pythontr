@@ -4,10 +4,22 @@
 <html>
   <head>
     <meta charset="utf-8">
+    
+    <script>
+      function prettyPrint(){
+      /*
+         Sorunun etrafından dolaşmak için oluşturuldu.
+         Hiç bir iş yapmıyor.
+         Google syntax highlighter include edildiğinde "gerçek" 
+         prettyPrint() fonksiyonunu kullanıyor.
+      */
+      }
+    </script>
+    
     <title>{% block title %}{% endblock %}</title>
     {% block include %}{% endblock %}
   </head>
-  <body>
+  <body onLoad="prettyPrint();">
     <header>
       <a href="{% url 'index_path' %}">Anasayfa</a>
       <hr />
