@@ -13,11 +13,11 @@ urlpatterns = patterns('',
                        url(r'^admin/', include(admin.site.urls)),
                        url(r'^links/', include('pythontr.app.links.urls')),
 
-                       url(r'^', include('pythontr.app.posts.urls')),
-                       url(r'^user/', include('pythontr.app.editors.urls')),
-
                        url(r'^rss/posts/$', PostFeed()),
                        url(r'^rss/documents/$', DocumentFeed()),
+
+                       url(r'^', include('pythontr.app.posts.urls')),
+                       url(r'^user/', include('pythontr.app.editors.urls')),
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
 urlpatterns += staticfiles_urlpatterns()
