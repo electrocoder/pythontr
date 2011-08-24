@@ -21,6 +21,7 @@ class Document(models.Model):
 	slug = models.SlugField(
 		verbose_name = "Belge linki",
 		help_text = "Bu alan otomatik oluşturulur.",
+		unique = True,
 		)
 		
 
