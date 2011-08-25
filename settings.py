@@ -127,6 +127,8 @@ INSTALLED_APPS = (
     'pythontr.app.users',
     'pythontr.app.videos',
     'pythontr.app.documents',
+
+    'pythontr.all_tests', # bütün testler bu uygulamada.
 )
 
 # A sample logging configuration. The only tangible logging
