@@ -16,7 +16,7 @@
   <a href="{% url 'index_path_page' page.previous_page_number %}">Previous page</a>
 {% endif %}
 
-{{ page.number }} of {{ page.paginator.num_pages }}
+{{ page.number }} / {{ page.paginator.num_pages }}
 
 {% if page.has_next %}
   <a href="{% url 'index_path_page' page.next_page_number %}">Next page</a>
