@@ -19,8 +19,8 @@ urlpatterns = patterns('',
                        
                        # rss paths
                        
-                       url(r'^rss/posts/$', PostFeed()),
-                       url(r'^rss/documents/$', DocumentFeed()),
+                       url(r'^rss/posts/$', PostFeed(), name = 'posts_feeds'),
+                       url(r'^rss/documents/$', DocumentFeed(), name = 'documents_feeds'),
                        
 ) + static(settings.MEDIA_URL, document_root = settings.MEDIA_ROOT)
 
