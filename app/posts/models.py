@@ -8,6 +8,12 @@ from django.contrib.auth.models import User
 class Tag(models.Model):
     """
     Blog için etiket modeli.
+    
+    # get_absolute_url testi.
+    
+    >>> tag = Tag.objects.create(title = 'deneme', slug = 'deneme')
+    >>> tag.get_absolute_url()
+    '/blog/tags/deneme/'
     """
 
 
@@ -40,6 +46,13 @@ class Topic(models.Model):
     Blog için konu modeli.
     title, slug, description alanları vardır.
     /django/post/1/ veya /flask/post/15/ gibi bir url ile kullanılabilir.
+    
+    # get_absolute_url testi.
+    
+    >>> topic = Topic.objects.create(title = 'deneme', slug = 'deneme', description = 'e')
+    >>> topic.get_absolute_url()
+    '/blog/deneme/'
+    
     """
 
     title = models.CharField(
