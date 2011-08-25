@@ -15,6 +15,18 @@ class Link(models.Model):
     tutar. Eğer doğruysa 'target=_blank' yerleştirir 2 numaralı alana.
 
     'url' alanı linkin gerçek yolunu tutar. 3 numaralı alana yerleştirilir.
+    
+    
+    # insert_target  testi
+    >>> url = 'http://google.com/'
+    >>> link = Link.objects.create(visible_name = 'Test', url = url)
+    >>> link2 = Link.objects.create(visible_name = 'Test2', open_in_new_tab = False, url = url)
+    
+    >>> link.insert_target()
+    'target=_blank'
+    >>> link2.insert_target()
+    ''
+    
     """
     
 
