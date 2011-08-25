@@ -1,4 +1,5 @@
 {% extends 'main.html' %}
+{% load url from future %}
 
 {% block title %} index pythontr.org {% endblock %}
 
@@ -12,13 +13,13 @@
 
 
 {% if page.has_previous %}
-  <a href="/page/{{ page.previous_page_number }}">Previous page</a>
+  <a href="{% url 'index_path_page' page.previous_page_number %}">Previous page</a>
 {% endif %}
 
 {{ page.number }} of {{ page.paginator.num_pages }}
 
 {% if page.has_next %}
-  <a href="/page/{{ page.next_page_number }}">Next page</a>
+  <a href="{% url 'index_path_page' page.next_page_number %}">Next page</a>
 {% endif %}
 
 {% endblock %}
