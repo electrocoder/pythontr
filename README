@@ -17,7 +17,7 @@ SECRET_KEY = "asdasdasdsadsdas1231232##123_123"
 ```
 istediğinizi yazabilirsiniz.
 
-```terminal
+```
 python manage.py syncdb
 ``` yapmayı unutmayın.
 
