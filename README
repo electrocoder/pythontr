@@ -6,10 +6,20 @@ http://py.yigitsadic.com/ adresinde test yayını yapılmaktadır.
 Önemli
 ------
 
-Kullanmadan önce lütfen 'secret' diye bir dosya açın proje klasöründe.
-İçine rastgele rakam, harflerden oluşan bir ifade girin.
+```python
+with open('secret', 'r') as secret_file:
+  SECRET_KEY = secret_file.read()
+```
 
-"python manage.py syncdb" yapmayı unutmayın.
+bu kısmı 
+```python
+SECRET_KEY = "asdasdasdsadsdas1231232##123_123"
+```
+istediğinizi yazabilirsiniz.
+
+```terminal
+python manage.py syncdb
+``` yapmayı unutmayın.
 
 '/' adresinde bir şey yok şimdilik.
 
