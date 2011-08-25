@@ -10,3 +10,23 @@ Kullanmadan önce lütfen 'secret' diye bir dosya açın proje klasöründe.
 İçine rastgele rakam, harflerden oluşan bir ifade girin.
 
 "python manage.py syncdb" yapmayı unutmayın.
+
+'/' adresinde bir şey yok şimdilik.
+
+Blog anasayfa için '/blog/'
+Linkler için '/links/'
+Rss
+  - gönderiler için '/rss/posts/'
+  - belgeler için '/rss/documents/'
+
+Admin sayfası için '/admin/'
+
+
+Yapılacaklar
+------------
+
+1) Kod bankası yapılacak.
+2) Üye kayıt, giriş, çıkış işlemleri yapılacak.
+3) Tasarım düzeltilecek.
+4) Her uygulamanın testleri yapılacak.
+5) AJAX nimetlerinden faydalınılabilir.
