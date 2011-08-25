@@ -125,6 +125,7 @@ INSTALLED_APPS = (
     'pythontr.app.links',
     'pythontr.app.posts',
     'pythontr.app.users',
+    'pythontr.app.videos',
     'pythontr.app.documents',
 )
 
