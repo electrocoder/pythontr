@@ -6,6 +6,11 @@ from pythontr.app.links.models import Link
 
 
 def index(request):
+    """
+    Veritabanında kayıtlı olan linkleri listelemek için kullanılır.
+    """
+    
+    
     links = Link.objects.all()
     
     response_dict = {
