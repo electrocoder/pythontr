@@ -6,13 +6,13 @@ http://py.yigitsadic.com/ adresinde test yayını yapılmaktadır.
 Önemli
 ------
 
-```python
+```
 with open('secret', 'r') as secret_file:
   SECRET_KEY = secret_file.read()
 ```
 
 bu kısmı 
-```python
+```
 SECRET_KEY = "asdasdasdsadsdas1231232##123_123"
 ```
 istediğinizi yazabilirsiniz.
