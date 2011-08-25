@@ -47,7 +47,11 @@ class Link(models.Model):
         verbose_name = "Gerçek adres",
         help_text = "http://www.djangoproject.com/ gibi",
         )
-
+    
+    accepted = models.BooleanField(
+        verbose_name = "Link kabul edildi mi?",
+        default = True,
+        )
     
     def __unicode__(self):
         return self.visible_name
