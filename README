@@ -31,6 +31,10 @@ Rss
 
 Admin sayfası için '/admin/'
 
+Testler için
+```python manage.py test all_tests```
+komutunu vermeniz yeterli.
+
 
 Yapılacaklar
 ------------
