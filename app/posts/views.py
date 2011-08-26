@@ -27,7 +27,7 @@ def index(request, page=1):
         target_page = paginated_posts.page(page)
     except EmptyPage:
         # getiremezsen anasayfaya yönlendir.
-        return redirect(reverse('index_path_page', args=(1, )))
+        return redirect(reverse('posts:index_path_page', args=(1, )))
 
 
     response_dict = {
@@ -96,9 +96,5 @@ def show_posts_with_tag(request, slug):
                   'posts/show_posts_with_tag.html', 
                   response_dict
                   )
-                  
-                  
-def search(request, param):
-    result = Post.objects.filter(title__contains = param)
     
     
