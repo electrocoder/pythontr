@@ -32,7 +32,7 @@ class Tag(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('posts:show_posts_with_tag_path', args=(self.slug, ))
+        return reverse('blog:show_posts_with_tag_path', args=(self.slug, ))
 
     class Meta:
 
@@ -76,7 +76,7 @@ class Topic(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('posts:show_topic_path', args=(self.slug, ))
+        return reverse('blog:show_topic_path', args=(self.slug, ))
 
 
     class Meta:
@@ -170,7 +170,7 @@ class Post(models.Model):
     
     
     def get_absolute_url(self):
-        return reverse('posts:show_path', args=(self.topic.slug, self.slug))
+        return reverse('blog:show_path', args=(self.topic.slug, self.slug))
     
 
     def __unicode__(self):
