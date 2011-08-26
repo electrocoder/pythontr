@@ -76,7 +76,7 @@ class Topic(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('show_topic_path', kwargs={'slug': topic.slug})
+        return reverse('show_topic_path', args=(self.slug, ))
 
 
     class Meta:
