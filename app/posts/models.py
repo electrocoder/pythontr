@@ -32,7 +32,7 @@ class Tag(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('show_posts_with_tag_path', args=(self.slug, ))
+        return reverse('posts:show_posts_with_tag_path', args=(self.slug, ))
 
     class Meta:
 
@@ -76,7 +76,7 @@ class Topic(models.Model):
 
 
     def get_absolute_url(self):
-        return reverse('show_topic_path', args=(self.slug, ))
+        return reverse('posts:show_topic_path', args=(self.slug, ))
 
 
     class Meta:
@@ -135,7 +135,7 @@ class Post(models.Model):
 
     content = models.TextField(
         verbose_name = "İçerik",
-        help_text = "Kodları renklendirmek için kodları <code><pre class='prettyprint'></pre></code> taglarını kullanın."
+        help_text = "Kodları renklendirmek için kodları <pre><pre class='prettyprint'></pre></pre> taglarını kullanın."
         )
 
     published = models.BooleanField(
@@ -170,7 +170,7 @@ class Post(models.Model):
     
     
     def get_absolute_url(self):
-        return reverse('show_path', kwargs = {'topic': self.topic.slug, 'slug': self.slug})
+        return reverse('posts:show_path', args=(self.topic.slug, self.slug))
     
 
     def __unicode__(self):
