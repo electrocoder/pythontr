@@ -10,10 +10,10 @@ admin.autodiscover()
 from feeds.feeds import PostFeed, DocumentFeed
 
 urlpatterns = patterns('',
-                       url(r'^blog/', include('pythontr.app.posts.urls')),
+                       url(r'^blog/', include('pythontr.app.posts.urls', namespace='blog')),
                        
-                       url(r'^links/', include('pythontr.app.links.urls')),                       
-                       url(r'^accounts/', include('pythontr.app.users.urls')),
+                       url(r'^links/', include('pythontr.app.links.urls', namespace='links')),                       
+                       url(r'^accounts/', include('pythontr.app.users.urls', namespace="users")),
                        
                        url(r'^admin/', include(admin.site.urls)),
                        
