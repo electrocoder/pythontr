@@ -35,8 +35,9 @@ Admin sayfası için '/admin/'
 Yapılacaklar
 ------------
 
-1) Kod bankası yapılacak.
-2) Üye kayıt, giriş, çıkış işlemleri yapılacak.
-3) Tasarım düzeltilecek.
-4) Her uygulamanın testleri yapılacak.
+* Kod bankası yapılacak.
+* Üye kayıt, giriş, çıkış işlemleri yapılacak.
+* Tasarım düzeltilecek.
+* Her uygulamanın testleri yapılacak.
+* Chapta yapılacak
 5) AJAX nimetlerinden faydalınılabilir.
