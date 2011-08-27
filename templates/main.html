@@ -30,10 +30,11 @@
       {% endif %}
       <span style="float: right;">
 	{% if user.is_authenticated %}       
-	  selam <b>{{ user.username }}</b>
+	  selam <b>{{ request.user }}</b>
 	  <a href="{% url 'users:logout_path' %}">çıkış</a>
 	{% else %}
 	  selam ziyaretçi <a href="{% url 'users:login_path' %}">giriş</a>
+	  <a href="{% url 'users:signup_path' %}">kayıt</a>
 	{% endif %}
       </span>
       <hr />

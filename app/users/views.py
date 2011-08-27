@@ -21,13 +21,14 @@ def signup(request):
     """ Üye kayıt için kullanılıyor. """
 
     if request.method == "POST":
-        form = Signup(request.POST)
+        form = Signup(request.POST, request.FILES)
         
         if form.is_valid():
             user = form.save()
             profile = Profile(
                 web = form.cleaned_data['web'],
                 bio = form.cleaned_data['bio'],
+                photo = form.cleaned_data['photo'],
                 user = user,
                 )
             profile.save()

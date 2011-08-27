@@ -33,6 +33,7 @@ class Profile(models.Model):
         blank = True,
         null = True,
         )
+
     bio = models.TextField(
         verbose_name = "Kısa açıklama",
         blank = True,

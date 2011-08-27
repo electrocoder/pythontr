@@ -6,6 +6,7 @@ from django.contrib.auth.forms import UserCreationForm
 class Signup(UserCreationForm):
     web = forms.URLField(initial = 'http://',
                          label = 'Web adresi',
+                         required = False,
         )
     
     bio = forms.CharField(
@@ -14,5 +15,6 @@ class Signup(UserCreationForm):
                           )
     
     photo = forms.ImageField(
-        label = "Görsel",
+        label = "Görsel",     
+        required = False,
         )        
