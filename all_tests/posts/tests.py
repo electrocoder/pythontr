@@ -69,6 +69,7 @@ class PostsViewTests(TestCase):
             response = client.get(reverse('blog:index_path_page', args=(page, )))
             self.assertEqual(response.status_code, 200)
             self.assertTrue(response.context['posts'])
+            self.assertTrue(response.context['page'])
 
         response = client.get(reverse('blog:index_path'))        
         self.assertEqual(response.status_code, 200)
@@ -76,7 +77,8 @@ class PostsViewTests(TestCase):
 
         goto_target_page(1)
         goto_target_page(2)
-
+        goto_target_page(3)
+        
 
     def test_show_post(self):
         """
@@ -85,7 +87,7 @@ class PostsViewTests(TestCase):
 
         """
         
-        for i in xrange(1, 40):
+        for i in xrange(1, 3):
             post = Post.objects.get(pk = i)
             response = client.get(post.get_absolute_url())
 
@@ -126,7 +128,6 @@ class PostsViewTests(TestCase):
         self.assertEqual(response.status_code, 200)
         self.assertTrue(response.context['posts'])
 
-
     
     def test_paginate_redirect(self):
         """
@@ -137,4 +138,5 @@ class PostsViewTests(TestCase):
         response = client.get(reverse('blog:index_path_page', args=[5]), follow = True)
 
         self.assertEqual(response.redirect_chain[0][0], 'http://testserver' + reverse('blog:index_path_page', args=[1]))
+        self.assertTrue(response.context['posts'])
         
