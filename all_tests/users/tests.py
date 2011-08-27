@@ -55,7 +55,11 @@ class UserViews(TestCase):
         
         
 
-    def test_signup(self):
+    def test_signup_without_image(self):
+        """
+        Resim olmadan üye olmayı test et.
+        """
+
         response = client.get(reverse('users:signup_path'))
 
         self.assertEqual(response.status_code, 200)
@@ -72,6 +76,11 @@ class UserViews(TestCase):
         self.assertEqual(response.redirect_chain[0][0],
                          'http://testserver' + reverse('blog:index_path'))
         
+
+    def test_signup_with_image(self):
+        """
+        Resim ile kayıt olmayı test et.
+        """
 
         with open(PATH + '/all_tests/users/lion.png', 'r') as image:
             photo = image.read()
