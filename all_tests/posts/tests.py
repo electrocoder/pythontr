@@ -10,7 +10,7 @@ from pythontr.app.posts.models import Post, Tag, Topic
 
 client = Client()
 
-class PostsFunctionalTests(TestCase):
+class PostsViewTests(TestCase):
     def setUp(self):
         """
         40 tane Post kayıdı oluştur.

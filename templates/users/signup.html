@@ -1,0 +1,14 @@
+{% extends 'main.html' %}
+
+{% block title %} Kayıt ol {% endblock %}
+
+{% block content %}
+<form method="POST"> {% csrf_token %}
+  <table>
+    {{ form.as_table }}
+    <tr>
+      <td><input type="submit" value="Kayıt ol" /></td>
+    </tr>
+  </table>
+</form>
+{% endblock %}

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
 
@@ -17,22 +17,15 @@ def index(request, page=1):
     
     links = Link.objects.filter(accepted = True)
     
-    paginated_links = Paginator(links, 20)
+    links = Paginator(links, 20)
     
     try:
         # /links/page/2/ ile girilmişse onu getir.
-        target_page = paginated_links.page(page)
+        page = links.page(page)
     except EmptyPage:
-        # getiremezsen anasayfaya yönlendir.
-        return redirect(reverse('links_path'))
-    except:
-        # en son çare page değişkenini 1 kabul et.
-        target_page = paginated_links.page(1)
-        
-    
-    response_dict = {
-        'links': paginated_links.object_list,
-        'page': paginated_links,
-        }
+        # getiremezsen ilk sayfaya yönlendir.
+        return redirect(reverse('links:index_path_page', args=[1]))
+            
+    links = page.object_list
 
-    return render(request, 'links/index.html', response_dict)
+    return render(request, 'links/index.html', locals())

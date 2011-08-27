@@ -7,7 +7,7 @@ from django.core.urlresolvers import reverse
 
 client = Client()
 
-class UserTest(TestCase):
+class UserViews(TestCase):
 
 
     def setUp(self):

@@ -12,16 +12,16 @@ from pythontr.app.posts.models import Post, Topic, Tag
 def index(request, page=1):
     
     posts = Post.objects.filter(published = True)
-    paginated_posts = Paginator(posts, 20)
+    posts = Paginator(posts, 20)
 
     try:
         # page/2/ ile girilmişse onu getir.
-        target_page = paginated_posts.page(page)
+        page = posts.page(page)
     except EmptyPage:
         # getiremezsen /page/1 adresine yönlendir.
         return redirect(reverse('blog:index_path_page', args=(1, )))
 
-    posts = target_page.object_list
+    posts = posts.object_list
     
     return render(request, 'posts/index.html', locals())
 
