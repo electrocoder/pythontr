@@ -4,8 +4,8 @@ belge, içerik ve gönderilen kodları duzenlemek icin üretilmiştir.
 Önemli
 ------
 
-	with open('secret', 'r') as secret_file:
-	     SECRET_KEY = secret_file.read()
+   with open('secret', 'r') as secret_file:
+      SECRET_KEY = secret_file.read()
 
 
 bu kısmı 
@@ -14,7 +14,7 @@ bu kısmı
 
 istediğinizi yazabilirsiniz.
 
-	     python manage.py syncdb
+   python manage.py syncdb
 
 yapmayı unutmayın.
 
@@ -34,7 +34,8 @@ Rss
 Admin sayfası için '/admin/'
 
 Testler için
-```python manage.py test all_tests```
+   python manage.py test all_tests
+
 komutunu vermeniz yeterli.
 
 ------------
