@@ -27,6 +27,12 @@ Blog anasayfa için
 Linkler için
   - '/links/'
 
+```ruby
+require 'redcarpet'
+markdown = Redcarpet.new("Hello World!")
+puts markdown.to_html
+```
+
 Rss
   - gönderiler için '/rss/posts/'
   - belgeler için '/rss/documents/'
@@ -37,10 +43,9 @@ Testler için
 ```python manage.py test all_tests```
 komutunu vermeniz yeterli.
 
-
-Yapılacaklar
 ------------
 
+Yapılacaklar
 - Kod bankası yapılacak.
 - Tasarım düzeltilecek.
 - Her uygulamanın testleri yapılacak.
