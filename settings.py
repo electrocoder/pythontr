@@ -31,7 +31,15 @@ PRODUCTION_DB = {
     'HOST': '',
     'PORT': ''
 }
-
+"""
+TEMPLATE_CONTEXT_PROCESSORS = ("django.contrib.auth.context_processors.auth",
+                               "django.core.context_processors.debug",
+                               "django.core.context_processors.i18n",
+                               "django.core.context_processors.media",
+                               "django.core.context_processors.static",
+                               "django.contrib.messages.context_processors.messages"
+                               )
+"""
 DATABASES = {
     'default': DEVELOPMENT_DB,
 }
@@ -46,7 +54,9 @@ USE_I18N = True
 
 USE_L10N = True
 
-AUTH_PROFILE_MODULE = "users.Editor"
+MESSAGE_STORAGE = 'django.contrib.messages.storage.cookie.CookieStorage'
+
+AUTH_PROFILE_MODULE = "users.Profile"
 
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout'

@@ -8,11 +8,10 @@ from django.core.urlresolvers import reverse
 
 from pythontr.settings import MEDIA_URL
 
-class Editor(models.Model):
+class Profile(models.Model):
     """
-    Gönderileri yazan editörler için oluşturulmuş model.
+    Üyeler için profil modeli.
     
-    Henüz taslak aşamasında.
     """
     
 
@@ -24,6 +23,8 @@ class Editor(models.Model):
     photo = models.ImageField(
         upload_to = 'user-images',
         verbose_name = "Grafik",
+        null = True,
+        blank = True,
         )
     
     web = models.CharField(
@@ -44,5 +45,5 @@ class Editor(models.Model):
     
     class Meta:
         ordering = ['-user__username']
-        verbose_name = "Editör"
-        verbose_name_plural = "Editörler"
+        verbose_name = "Profil"
+        verbose_name_plural = "Profiller"

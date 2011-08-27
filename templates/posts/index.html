@@ -5,6 +5,12 @@
 
 {% block content %}
 
+{% if messages %}
+  {% for message in messages %}
+    <h4>{{ message }}</h4>
+  {% endfor %}
+{% endif %}
+
 <ul>
   {% for post in posts %}
   <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>

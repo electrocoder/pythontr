@@ -1,11 +1,11 @@
 from django.contrib import admin
 
-from pythontr.app.users.models import Editor
+from pythontr.app.users.models import Profile
 
-class EditorAdmin(admin.ModelAdmin):
+class ProfileAdmin(admin.ModelAdmin):
     list_display = ('user', 'web')
     search_fields = ['user__username', 'web', 'bio']
     
 
 
-admin.site.register(Editor, EditorAdmin)
+admin.site.register(Profile, ProfileAdmin)
