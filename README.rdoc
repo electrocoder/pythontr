@@ -4,28 +4,29 @@ belge, içerik ve gönderilen kodları duzenlemek icin üretilmiştir.
 Önemli
 ------
 
-```
-
+```python
 with open('secret', 'r') as secret_file:
   SECRET_KEY = secret_file.read()
 ```
 
 bu kısmı 
-```
-
+```python
 SECRET_KEY = "asdasdasdsadsdas1231232##123_123"
 ```
 istediğinizi yazabilirsiniz.
 
-```
-
+```python
 python manage.py syncdb
 ``` yapmayı unutmayın.
 
 '/' adresinde bir şey yok şimdilik.
 
-Blog anasayfa için '/blog/'
-Linkler için '/links/'
+Blog anasayfa için
+  - '/blog/'
+
+Linkler için
+  - '/links/'
+
 Rss
   - gönderiler için '/rss/posts/'
   - belgeler için '/rss/documents/'
