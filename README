@@ -1,8 +1,6 @@
 PythonTR ekibi tarafından uretilen Django temelli pythontr.org sitesindeki
 belge, içerik ve gönderilen kodları duzenlemek icin üretilmiştir.
 
-http://py.yigitsadic.com/ adresinde test yayını yapılmaktadır.
-
 Önemli
 ------
 
@@ -40,7 +38,7 @@ Yapılacaklar
 ------------
 
 - Kod bankası yapılacak.
-- Üye kayıt, giriş, çıkış işlemleri yapılacak.
+- Üye kayıt yapılacak.
 - Tasarım düzeltilecek.
 - Her uygulamanın testleri yapılacak.
 - Chapta kullanma halledilecek.
