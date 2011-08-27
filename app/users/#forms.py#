@@ -1,0 +1,12 @@
+# -*- coding: utf-8 -*-
+
+from django import forms
+
+
+class Signup(UserCreationForm):
+    web = forms.URLField( initial = 'http://')
+    
+    bio = forms.CharField(
+        widget=forms.Textarea,
+        initial = "Kendiniz hakkœô Ñnda birœô ÿeyler yazœô Ñn"
+                          )
