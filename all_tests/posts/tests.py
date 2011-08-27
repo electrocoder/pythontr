@@ -128,3 +128,13 @@ class PostsFunctionalTests(TestCase):
 
 
     
+    def test_paginate_redirect(self):
+        """
+        Eğer olmayan bir sayfa girilmişse ilk sayfaya
+        yönlendirilmeli.
+        """
+        
+        response = client.get(reverse('blog:index_path_page', args=[5]), follow = True)
+
+        self.assertEqual(response.redirect_chain[0][0], 'http://testserver' + reverse('blog:index_path_page', args=[1]))
+        

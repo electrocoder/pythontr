@@ -19,15 +19,11 @@ def index(request, page=1):
         target_page = paginated_posts.page(page)
     except EmptyPage:
         # getiremezsen /page/1 adresine yönlendir.
-        return redirect(reverse('posts:index_path_page', args=(1, )))
+        return redirect(reverse('blog:index_path_page', args=(1, )))
 
-
-    response_dict = {
-        'posts': target_page.object_list,
-        'page': target_page,
-        }
+    posts = target_page.object_list
     
-    return render(request, 'posts/index.html', response_dict)
+    return render(request, 'posts/index.html', locals())
 
 
 #@cache_page(60 * 5)
@@ -41,11 +37,7 @@ def show(request, topic, slug):
     if not post.topic.slug == topic or not post.published:
         raise Http404
 
-    response_dict = {
-        'post': post,
-        }
-
-    return render(request, 'posts/show.html', response_dict)
+    return render(request, 'posts/show.html', locals())
 
 
 def show_topic(request, slug):
@@ -56,13 +48,8 @@ def show_topic(request, slug):
 
     topic = Topic.objects.get(slug = slug)
     posts = Post.objects.filter(topic = topic)
-
-    response_dict = {
-        'posts': posts,
-        'topic': topic,
-        }
     
-    return render(request, 'posts/show_topic.html', response_dict)
+    return render(request, 'posts/show_topic.html', locals())
     
 
 
@@ -77,15 +64,7 @@ def show_posts_with_tag(request, slug):
         posts = Post.objects.filter(tags__slug__contains = slug)
     except:
         raise Http404
-
-    response_dict = {
-        'posts': posts,
-        'tag': tag,
-        }
     
-    return render(request,
-                  'posts/show_posts_with_tag.html', 
-                  response_dict
-                  )
+    return render(request,'posts/show_posts_with_tag.html', locals())
     
     
