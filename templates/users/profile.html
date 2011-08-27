@@ -13,7 +13,9 @@
 					Resim
 				</td>
 				<td>
+				  {% if user.get_profile.photo %}
 					<img src="{{ user.get_profile.photo.url }}" />
+					{% endif %}
 				</td>
 			</tr>
 			<tr>
