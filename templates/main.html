@@ -20,11 +20,22 @@
     {% block include %}{% endblock %}
   </head>
   <body onLoad="prettyPrint();">
-    <header>
+    <header>     
       <a href="{% url 'blog:index_path' %}">Anasayfa</a>
       <a href="{% url 'links:index_path' %}">Bağlantılar</a>
       <a href="{% url 'posts_feeds' %}">RSS / Gönderiler</a>
       <a href="{% url 'documents_feeds' %}">RSS / Belgeler</a>
+      {% if user.is_authenticated %}
+       <a href="{% url 'users:profile_path' user.username %}">Profilim</a>
+      {% endif %}
+      <span style="float: right;">
+	{% if user.is_authenticated %}       
+	  selam <b>{{ user.username }}</b>
+	  <a href="{% url 'users:logout_path' %}">logout</a>
+	{% else %}
+	  selam ziyaretçi <a href="{% url 'users:login_path' %}">login</a>
+	{% endif %}
+      </span>
       <hr />
     </header>
     <div id="main">

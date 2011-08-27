@@ -48,6 +48,11 @@ USE_L10N = True
 
 AUTH_PROFILE_MODULE = "users.Editor"
 
+LOGIN_URL = '/accounts/login/'
+LOGOUT_URL = '/accounts/logout'
+
+LOGIN_REDIRECT_URL = '/blog/'
+
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 # Example: "/home/media/media.lawrence.com/media/"
 MEDIA_ROOT = PATH + '/media/'
