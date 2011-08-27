@@ -10,14 +10,6 @@ from pythontr.app.posts.models import Post, Topic, Tag
 
 #@cache_page(30)
 def index(request, page=1):
-    """
-    Anasayfa.
-    '/' adresini kullanır.
-    Her sayfada 20 gönderi vardır.
-    Varsayılan olarak ilk sayfayı gösterir.
-    
-    30 saniye kaşelenir.
-    """
     
     posts = Post.objects.filter(published = True)
     paginated_posts = Paginator(posts, 20)
@@ -26,7 +18,7 @@ def index(request, page=1):
         # page/2/ ile girilmişse onu getir.
         target_page = paginated_posts.page(page)
     except EmptyPage:
-        # getiremezsen anasayfaya yönlendir.
+        # getiremezsen /page/1 adresine yönlendir.
         return redirect(reverse('posts:index_path_page', args=(1, )))
 
 
@@ -41,8 +33,7 @@ def index(request, page=1):
 #@cache_page(60 * 5)
 def show(request, topic, slug):
     """
-    Birincil anahtarı ile girilen anahtarı eşit olanı göster.
-    Kaşeleme yapılıyor. 5 dakika süresince RAM'de tutulur.
+    Gönderi göstermede kullanılıyor.
     """
 
     post = get_object_or_404(Post, slug = slug)
