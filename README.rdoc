@@ -27,11 +27,6 @@ Blog anasayfa için
 Linkler için
   - '/links/'
 
-```ruby
-require 'redcarpet'
-markdown = Redcarpet.new("Hello World!")
-puts markdown.to_html
-```
 
 Rss
   - gönderiler için '/rss/posts/'
