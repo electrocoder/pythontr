@@ -39,6 +39,7 @@ class UserTest(TestCase):
         response = client.get(reverse('blog:index_path'))
 
         self.assertTrue(response.context['user'].username)
+        self.assertEqual(response.context['user'].username, self.user.username)
     
     def test_logout(self):
         """
