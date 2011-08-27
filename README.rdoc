@@ -4,9 +4,8 @@ belge, içerik ve gönderilen kodları duzenlemek icin üretilmiştir.
 Önemli
 ------
 
-
 	with open('secret', 'r') as secret_file:
-	  SECRET_KEY = secret_file.read()
+	     SECRET_KEY = secret_file.read()
 
 
 bu kısmı 
@@ -16,6 +15,7 @@ bu kısmı
 istediğinizi yazabilirsiniz.
 
 	     python manage.py syncdb
+
 yapmayı unutmayın.
 
 '/' adresinde bir şey yok şimdilik.
