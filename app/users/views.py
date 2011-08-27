@@ -6,8 +6,10 @@ from django.contrib import messages
 
 from django.contrib.auth.models import User
 
-from pythontr.app.users.forms import Signup
+from pythontr.app.users.forms import SignupForm
 from pythontr.app.users.models import Profile
+
+from django.forms.formsets import formset_factory
 
 def profile(request, username):
     """ Üye profilini göstermek için kullanılıyor. """
@@ -21,7 +23,7 @@ def signup(request):
     """ Üye kayıt için kullanılıyor. """
 
     if request.method == "POST":
-        form = Signup(request.POST, request.FILES)
+        form = SignupForm(request.POST, request.FILES)
         
         if form.is_valid():
             user = form.save()
@@ -37,7 +39,7 @@ def signup(request):
 
             return redirect(reverse('blog:index_path'))
     else:
-        form = Signup()
+        form = SignupForm()
         
     return render(request, 'users/signup.html', locals())
             

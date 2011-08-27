@@ -3,7 +3,10 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 
-class Signup(UserCreationForm):
+
+class SignupForm(UserCreationForm):
+
+
     web = forms.URLField(initial = 'http://',
                          label = 'Web adresi',
                          required = False,
@@ -15,6 +18,6 @@ class Signup(UserCreationForm):
                           )
     
     photo = forms.ImageField(
-        label = "Görsel",     
+        label = "Görsel",
         required = False,
-        )        
+        )

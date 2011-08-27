@@ -14,21 +14,12 @@ class Link(models.Model):
     'open_in_new_tab' alanı linkin yeni sekmede açılıp açılmayacağını
     tutar. Eğer doğruysa 'target=_blank' yerleştirir 2 numaralı alana.
 
-    'url' alanı linkin gerçek yolunu tutar. 3 numaralı alana yerleştirilir.
-    
-    
-    # insert_target  testi
-    >>> url = 'http://google.com/'
-    >>> link = Link.objects.create(visible_name = 'Test', url = url)
-    >>> link2 = Link.objects.create(visible_name = 'Test2', open_in_new_tab = False, url = url)
-    
-    >>> link.insert_target()
-    'target=_blank'
-    >>> link2.insert_target()
-    ''
-    
+    'url' alanı linkin gerçek yolunu tutar. 3 numaralı alana yerleştirilir.       
     """
-    
+    email = models.EmailField(
+        verbose_name = "Ekleyen email",
+        help_text = "Güvenlik için önemli",
+        )
 
     visible_name = models.CharField(
         max_length = 255,

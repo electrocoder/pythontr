@@ -6,6 +6,7 @@ from django.core.urlresolvers import reverse
 
 
 from pythontr.app.links.models import Link
+from pythontr.app.links.forms import NewLinkForm
 
 
 def index(request, page=1):
@@ -29,3 +30,12 @@ def index(request, page=1):
     links = page.object_list
 
     return render(request, 'links/index.html', locals())
+
+
+def new_link(request):
+    if request.method == "POST":
+        form = NewLinkForm(request.FORM)
+    else:
+        form = NewLinkForm()
+
+    return render(request, 'links/new_link.html', locals())

@@ -57,3 +57,10 @@ class LinkTest(TestCase):
         self.assertEqual(self.link2.insert_target(), 'target=_blank')
         self.assertEqual(self.link1.insert_target(), '')
     
+
+    def test_add_new_test(self):
+        """
+        """
+        
+        response = client.get(reverse('links:index_path'))
+        self.assertEqual(response.status_code, 200)
