@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+from pythontr.settings import PATH
+
 from django.test import TestCase, Client
 
 from django.contrib.auth.models import User, AnonymousUser
@@ -52,3 +54,37 @@ class UserViews(TestCase):
         self.assertFalse(response.context['user'].username)
         
         
+
+    def test_signup(self):
+        response = client.get(reverse('users:signup_path'))
+
+        self.assertEqual(response.status_code, 200)
+        
+        response = client.post(reverse('users:signup_path'),
+                               {
+                'username': 'yeget', 
+                'password1': '1234',
+                'password2': '1234', # password confirmation
+                'web': 'http://test.com/',
+                'bio': '12312312312'
+                                }, follow = True)
+
+        self.assertEqual(response.redirect_chain[0][0],
+                         'http://testserver' + reverse('blog:index_path'))
+        
+
+        with open(PATH + '/all_tests/users/lion.png', 'r') as image:
+            photo = image.read()
+
+        response = client.post(reverse('users:signup_path'),
+                               {
+                'username': 'resimli',
+                'password1': '1234',
+                'password2': '1234',
+                'web': 'http://test.com/',
+                'bio': '123asdadqeqweqweW',
+                'photo': photo
+                }, follow = True)
+        
+        self.assertEqual(response.redirect_chain[0][0],
+                         'http://testserver' + reverse('blog:index_path'))
