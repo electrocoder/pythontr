@@ -15,8 +15,9 @@ def index(request, page=1):
     Her sayfada 20 link vardır.
     """
     
+    links = Link.objects.filter(accepted = True)
     
-    paginated_links = Paginator(Link.objects.all(), 20)
+    paginated_links = Paginator(links, 20)
     
     try:
         # /links/page/2/ ile girilmişse onu getir.
