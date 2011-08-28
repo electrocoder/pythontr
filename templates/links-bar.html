@@ -1,22 +1,21 @@
-<a href="/">
+{% load url from future %}
+
+<a href="{% url 'blog:index_path' %}">
   Ana Sayfa
 </a>
-<a href="/python">
-  PythonTR
+<a href="{% url 'links:index_path' %}">
+  Bağlantılar
 </a>
 <a href="/visual-python-2">
-  Visual Python
+  Belgeler
 </a>
 <a href="/pygtk">
-  PyGTK
+  Videolar
 </a>
-<a href="/pyqt_">
-  PyQT
+<a href="{% url 'users:show_editors_path' %}">
+  Editörler
 </a>
-<a href="/tkinterlib">
-  Tkinter</a>
-<a href="/wxpython">
-  WxPython</a>
+
 <a href="/kodbankasi">
   Python Kod Bankası
 </a>

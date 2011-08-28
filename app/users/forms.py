@@ -20,4 +20,5 @@ class SignupForm(UserCreationForm):
     photo = forms.ImageField(
         label = "Görsel",
         required = False,
+        help_text = "Lütfen PNG formatında görsel tercih ediniz.",
         )

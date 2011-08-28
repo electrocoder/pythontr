@@ -1,0 +1,19 @@
+{% extends 'main.html' %}
+{% load url from future %}
+
+{% block title %} Editorler {% endblock %}
+
+{% block content %}
+<h4>Pythontr.org Editorleri...</h4>
+<ul>
+  {% for editor in editors %}
+  <li>
+    <a href="{% url 'users:profile_path' editor.username %}">
+      {{ editor.username }}
+    </a>
+  </li>
+  {% endfor %}
+</ul>
+    
+
+{% endblock %}

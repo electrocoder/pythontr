@@ -4,7 +4,7 @@ from django.shortcuts import render, get_object_or_404, redirect
 from django.core.urlresolvers import reverse
 from django.contrib import messages
 
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 
 from pythontr.app.users.forms import SignupForm
 from pythontr.app.users.models import Profile
@@ -43,3 +43,15 @@ def signup(request):
         
     return render(request, 'users/signup.html', locals())
             
+
+def editors(request):
+    """
+    Editörleri listeliyor.
+    """
+    
+    group = Group.objects.get(pk = 1)
+    editors = group.user_set.all()
+    
+    return render(request, 'users/show_editors.html', locals())
+    
+    

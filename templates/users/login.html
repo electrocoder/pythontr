@@ -10,20 +10,26 @@
 {% endif %}
 
 <form method="post" action="{% url 'users:login_path' %}">
-{% csrf_token %}
-<table>
-<tr>
-    <td>{{ form.username.label_tag }}</td>
-    <td>{{ form.username }}</td>
-</tr>
-<tr>
-    <td>{{ form.password.label_tag }}</td>
-    <td>{{ form.password }}</td>
-</tr>
-</table>
-
-<input type="submit" value="login" />
-<input type="hidden" name="next" value="{{ next }}" />
+  {% csrf_token %}
+  <table>
+    <tr>
+      <td>{{ form.username.label_tag }}</td>
+      <td>{{ form.username }}</td>
+    </tr>
+    <tr>
+      <td>{{ form.password.label_tag }}</td>
+      <td>{{ form.password }}</td>
+    </tr>
+    <tr>
+      <td colspan="2" align="center">
+	<button class="sexybutton sexysimple sexyblue" type="submit">
+	  Giriş
+	</button>
+      </td>
+    </tr>
+  </table>
+  
+  <input type="hidden" name="next" value="{{ next }}" />
 </form>
 
 {% endblock %}

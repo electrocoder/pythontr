@@ -13,19 +13,25 @@
 
 <ul>
   {% for post in posts %}
-  <li><a href="{{ post.get_absolute_url }}">{{ post.title }}</a></li>
+  <p>
+    <a href="{{ post.get_absolute_url }}"><h2>{{ post.title }}</h2></a>
+    <p>
+      {{ post.content|truncatewords:50 }}
+    </p>
+  </p>
   {% endfor %}
 </ul>
 
 
 {% if page.has_previous %}
-  <a href="{% url 'blog:index_path_page' page.previous_page_number %}">Previous page</a>
+<a href="{% url 'blog:index_path_page' page.previous_page_number %}">Previous page</a>
 {% endif %}
 
 {{ page.number }} / {{ page.paginator.num_pages }}
 
 {% if page.has_next %}
-  <a href="{% url 'blog:index_path_page' page.next_page_number %}">Next page</a>
+<a href="{% url 'blog:index_path_page' page.next_page_number %}">Next page</a>
 {% endif %}
 
 {% endblock %}
+
