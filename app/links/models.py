@@ -25,6 +25,7 @@ class Link(models.Model):
         max_length = 255,
         verbose_name = "Görünür isim",
         help_text = "Link için görünür isim giriniz.",
+        unique = True,
         )
 
     open_in_new_tab = models.BooleanField(
@@ -41,7 +42,7 @@ class Link(models.Model):
     
     accepted = models.BooleanField(
         verbose_name = "Link kabul edildi mi?",
-        default = True,
+        default = False,
         )
     
     def __unicode__(self):

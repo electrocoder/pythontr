@@ -3,7 +3,7 @@
 from django.shortcuts import render, redirect
 from django.core.paginator import Paginator, EmptyPage
 from django.core.urlresolvers import reverse
-
+from django.contrib import messages
 
 from pythontr.app.links.models import Link
 from pythontr.app.links.forms import NewLinkForm
@@ -16,8 +16,7 @@ def index(request, page=1):
     Her sayfada 20 link vardır.
     """
     
-    links = Link.objects.filter(accepted = True)
-    
+    links = Link.objects.filter(accepted = True)    
     links = Paginator(links, 20)
     
     try:
@@ -34,7 +33,14 @@ def index(request, page=1):
 
 def new_link(request):
     if request.method == "POST":
-        form = NewLinkForm(request.FORM)
+        form = NewLinkForm(request.POST)
+        if form.is_valid():
+            form.save()
+            
+            message_text = "Link gönderildi. Kabul edildiğinde yayınlanmaya başlıyacak"
+            messages.success(request, message_text)
+
+            return redirect('blog:index_path')
     else:
         form = NewLinkForm()
 
