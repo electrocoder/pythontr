@@ -3,6 +3,36 @@
 from django.db import models
 
 
+class Category(models.Model):
+    """
+    Linklerin bağlı olduğu kategori.
+    Ders vb.
+    """
+    
+    title = models.CharField(
+        max_length = "50",
+        verbose_name = "Başlık",
+        unique = True,
+        )
+
+    slug = models.SlugField(
+        verbose_name = "Link",
+        unique = True,
+        )
+    
+    def __unicode__(self):
+        return self.title
+
+    def get_absolute_url(self):
+        return '/'
+
+    class Meta:
+
+        verbose_name = "Kategori"
+        verbose_name_plural = "Kategoriler"
+
+
+
 class Link(models.Model):
     """
     Linkleri tutmak için kullanılan model.
@@ -16,6 +46,12 @@ class Link(models.Model):
 
     'url' alanı linkin gerçek yolunu tutar. 3 numaralı alana yerleştirilir.       
     """
+    
+    category = models.ForeignKey(
+        Category,
+        verbose_name = "Kategori",
+        )   
+
     email = models.EmailField(
         verbose_name = "Ekleyen email",
         help_text = "Güvenlik için önemli",

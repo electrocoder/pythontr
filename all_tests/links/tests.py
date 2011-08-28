@@ -3,7 +3,7 @@
 from django.test import TestCase, Client
 from django.core.urlresolvers import reverse
 
-from pythontr.app.links.models import Link
+from pythontr.app.links.models import Link, Category
 from pythontr.app.links.forms import NewLinkForm
 
 client = Client()
@@ -12,8 +12,13 @@ class LinkTest(TestCase):
 
 
     def setUp(self):
+        self.category = Category.objects.create(
+            title = 'test category',
+            slug = 'test-category',
+            )
 
         self.link1 = Link.objects.create(
+            category = self.category,
             visible_name = 'link 1',
             open_in_new_tab = False,
             url = 'http://google.com/',
@@ -21,6 +26,7 @@ class LinkTest(TestCase):
             )
         
         self.link2 = Link.objects.create(
+            category = self.category,
             visible_name = 'link 2',
             open_in_new_tab = True,
             url = 'http://google.com/',
@@ -29,6 +35,7 @@ class LinkTest(TestCase):
 
 
         self.link3 = Link.objects.create(
+            category = self.category,
             visible_name = 'link 3',
             open_in_new_tab = False,
             url = 'http://google.com/',
@@ -70,6 +77,7 @@ class LinkTest(TestCase):
 
         response = client.post(reverse('links:new_link_path'),
                                {
+                'category': self.category.pk,
                 'email': 'test@hotmail.com',
                 'visible_name': 'test',
                 'open_in_new_tab': True,
