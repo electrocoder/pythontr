@@ -5,17 +5,20 @@ belge, içerik ve gönderilen kodları duzenlemek icin üretilmiştir.
 ------
 
 ```
+
 with open('secret', 'r') as secret_file:
   SECRET_KEY = secret_file.read()
 ```
 
 bu kısmı 
 ```
+
 SECRET_KEY = "asdasdasdsadsdas1231232##123_123"
 ```
 istediğinizi yazabilirsiniz.
 
 ```
+
 python manage.py syncdb
 ``` yapmayı unutmayın.
 
@@ -38,7 +41,6 @@ Yapılacaklar
 ------------
 
 - Kod bankası yapılacak.
-- Üye kayıt yapılacak.
 - Tasarım düzeltilecek.
 - Her uygulamanın testleri yapılacak.
 - Chapta kullanma halledilecek.
