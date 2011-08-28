@@ -1,0 +1,33 @@
+{% load url from future %}
+
+<div id="logo">
+  <p class="slogan">
+    <b>
+      pythonTR' nin açık kaynaklı web geliştirme
+      çatısı
+    </b>
+    <br />
+    django kaynak kodlarını <a href="http://github.com">github</a>
+    adresinden indirebilirsiniz. <br></br>
+    <a href="/">
+      <img src="{{ STATIC_URL }}img/facebook-icon.png" />
+    </a>
+    <a href="/">
+      <img src="{{ STATIC_URL }}img/twitter-icon.png">
+    </a>
+    <a href="/">
+      <img src="{{ STATIC_URL }}img/rss-icon.png" />
+    </a>
+    <a href="/">
+      <img src="{{ STATIC_URL }}img/google-icon.png" />
+    </a>
+  </p>
+</div>
+
+<h1>
+  <a href="{% url 'blog:index_path' %}">
+    <img src="{{ STATIC_URL }}img/pythontr-logo-fil.png" />python
+      programcilari dernegi...</a>
+</h1>
+  
+  

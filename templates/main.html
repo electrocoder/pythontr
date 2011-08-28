@@ -1,49 +1,190 @@
+{% load humanize %}
+{% load markup %}
 {% load url from future %}
 
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta name="google-site-verification"
+	  content="euJj8OwKcNB1hAMqaI1EZXDkEjbN9aYaKXLroa9hBDE" />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      <meta http-equiv="Content-Language" content="English" />
+      <meta name="Distribution" content="Global" />
+      <meta name="author" content="python programlama dili, python, indir" />
+      <meta name="Robots" content="index,follow" />
+      <meta name="Revisit-after" content="1 days" />
+      <meta name="classification" content="python, programlama">
+	<meta name="Copyright" content="2011" />
+	<meta name="description"
+	      content="Python Programcıları Derneği Django ve Python Programlama Dili
+		       Türkçe Ders, Türkçe Kitap ve Online Eğitim Kurs" />
+	<meta name="expires" content="never" />
+	<meta name="rating" content="general" />
+	<meta name="allow-search" content="yes" />
+	<meta name="keywords"
+	      content="python türkiye, Python, piton, PythonTR, python tr, phyton e-kitap, piython e-book, Python ders, python dersleri,
+		       python türkçe, python nedir, python indir, piton download, python download, python tutorial,
+		       phyton programlama, python kod bankası, os path belirtme, dizi sola yaslama,
+		       python 2.7, masaüstü son hali kaydetme, ascii,
+		       python 3.1, aptitude, python-tr, python_tr, aptana,
+		       kitap, Django, Spyder, Django nedirTkinterlibYazilar, Site yapımı, py, *.py, pyton" />
+	<link rel="Shortcut Icon" href="{{ STATIC_URL }}favicon.ico"></link>
+	<link rel="stylesheet" type="text/css" href="{{ STATIC_URL }}css/style.css" />
+	<title>
+	  {% block title %}{% endblock %}
+	</title>
+	<!--	
+	<script type="text/javascript">
+	  var _gaq = _gaq || [];
+	  _gaq.push([ '_setAccount', 'UA-21599522-1' ]);
+	_gaq.push([ '_trackPageview' ]);
+	  
+	  (function() {
+		var ga = document.createElement('script');
+	  ga.type = 'text/javascript';
+	  ga.async = true;
+	  ga.src = ('https:' == document.location.protocol ? 'https://ssl'
+	  : 'http://www')
+	  + '.google-analytics.com/ga.js';
+	  var s = document.getElementsByTagName('script')[0];
+		s.parentNode.insertBefore(ga, s);
+	  })();</script>
+	-->
+      </head>
+      <body>
+	<header>
+	  {% include 'header.html' %}
+	</header>
+
+	  <div id="hmenu">
+	    {% include 'links-bar.html' %}
+	  </div>
+	</div>
+	
+	<div class="content">
+	  <div id="articles">
+	    <div id="right">
+	      {% block content %}{% endblock %}
+	    </div>
+	    
+	    <div id="koloniki">
+	      <div id="kolonikimenu">
+		<a>Bu Alana En çok Okunan Makalelerin Listesi Yazılır.</a>
+		<!--<a href="http://www.yazki.com"-->
+		<!--	target="_blank"> <img src="/static/img/yazki.png"></img></a> -->
+		<!--	<a-->
+		<!--	href="http://www.djangoturkiye.com" target="_blank"> <img-->
+		<!--	src="/static/img/django-hosting.gif"></img></a> -->
+		<!--	<script-->
+		<!--	type="text/javascript">-->
+		<!--			-->
+		<!--				google_ad_client = "pub-9547694343106216";-->
+		<!--				/* 120x240, oluşturulma 03.05.2011 */-->
+		<!--				google_ad_slot = "7085270116";-->
+		<!--				google_ad_width = 120;-->
+		<!--				google_ad_height = 240;-->
+		<!--			//-->
+		<!--			</script>-->
+		<!--			 <a href="http://www.yazki.com" target="_blank"> <img-->
+		<!--	src="/static/img/yazki.png"></img></a> -->
+		<a>Bu Alana En son Girilen Makalelerin Listesi Yazılır.</a>
+		<!--	<script type="text/javascript"-->
+		<!--	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">-->
+		<!--				-->
+		<!--			</script> <script type="text/javascript">-->
+		<!--			-->
+		<!--				google_ad_client = "pub-9547694343106216";-->
+		<!--				/* 160x600, oluşturulma 03.05.2011 */-->
+		<!--				google_ad_slot = "4271310187";-->
+		<!--				google_ad_width = 140;-->
+		<!--				google_ad_height = 600;-->
+		<!--			//-->
+<!--			</script> <script type="text/javascript"-->
+<!--	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">-->
+<!--			</script>-->
+<!--			 <a href="/">Python programcıları derneği...</a>-->
+	      </div>
+	    </div>
+	    
+<div id="left">
+  <div id="leftmenu">
+    <a href="/">Ana Sayfa</a>
+    <a href="/bagisyap">Bağış Yap</a>
+    <a href="/anket">ANKETLER</a>
+    <a href="/bizkimiz">BİZ KİMİZ?</a>
+    <a href="/iletisim">İLETİŞİM</a>
+    <a href="/sitemap">SİTEMAP</a>
+    <a href="/visual-python-1">VISUAL PYTHON 1.x</a>
+    <a href="/visual-python-2">VISUAL PYTHON 2.x</a>
+    <a href="/python">PYTHON</a>
+    <a href="/pygtk">PYGTK</a>
+    <a href="/pythonqt_">PYQT</a>
+    <a href="/tkinterlib">TKINTER</a>
+    <a href="/wxpython">WXPYTHON</a>
+    <a href="/pyjamasdesktop">PYJAMASDESKTOP</a>
+    <a href="/ironpython">IRONPYTHON</a>
+    <a href="/jython">JYTHON</a>
+    <a href="/easygui">EASY GUI</a>
+    <a href="/pykde">PYKDE</a>
+    <a href="/django">DJANGO</a>
+    <a href="/pymatlab">PYMATLAB</a>
+    <a href="/pyopengl">PYOPENGL</a>
+    <a href="/pymyhdl">PY-MyHDL</a>
+    <a href="/mobil">PYTHON MOBIL</a>
+    <a href="/kodbankasi">PYTHON KOD BANKASI</a>
+    <a href="/python-kod-bankasi-liste">LİSTE</a>
+    <a href="/download">DOWNLOAD</a>
+    <a href="/yazilimmuhendisligi">YAZILIM MÜHENDİSLİĞİ</a>
+    <a href="http://pythontr.net/">PYTHON FORUM</a>
+    <a href="/blog">PYTHON GUNLUKLERİ</a>
+    <a href="/simplewiki">PYTHON WIKI</a>
+    <a href="/kitap">PYTHON KİTAP</a>
+    <a href="/pythontv">PYTHON TV</a>
+    <a href="/shell">PYTHON SHELL</a>    
+    <a href="http://www.python.org/" target="_blank">>>>Python</a>
+    <a href="http://www.djangoproject.com/" target="_blank">>>>Django</a>
+    <a href="http://uzaktanegitimmerkezi.org/" target="_blank">>>>Uzaktan Eğitim</a>
+    <a href="http://visualpython.org/" target="_blank">>>>Visual Python</a>
+    <a href="http://electrocoder.blogspot.com/" target="_blank">>>>Şahin MERSİN</a>
+    <a href="http://trakyali.webfactional.com/" target="_blank">>>>Yigit SADİÇ</a>
+    <a href="http://www.erkankeskin.com.tr/" target="_blank">>>>Erkan KESKİN</a>
+    <a href="http://www.osmanfatsa.com/" target="_blank">>>>Osman FATSA</a>
+    <a href="http://mturkergultepe.com/" target="_blank">>>>M.Türker GÜLTEPE</a>    
     
-    <script>
-      function prettyPrint(){
-      /*
-         Sorunun etrafından dolaşmak için oluşturuldu.
-         Hiç bir iş yapmıyor.
-         Google syntax highlighter include edildiğinde "gerçek" 
-         prettyPrint() fonksiyonunu kullanıyor.
-      */
-      }
-    </script>
-    
-    <title>{% block title %}{% endblock %}</title>
-    {% block include %}{% endblock %}
-  </head>
-  <body onLoad="prettyPrint();">
-    <header>
-      <a href="{% url 'blog:index_path' %}">Anasayfa</a>
-      <a href="{% url 'links:index_path' %}">Bağlantılar</a>
-      <a href="{% url 'posts_feeds' %}">RSS / Gönderiler</a>
-      <a href="{% url 'documents_feeds' %}">RSS / Belgeler</a>
-      {% if request.user.is_authenticated %}
-      {{ request.user.get_profile.get_absolute_url }}
-       <a href="{% url 'users:profile_path' user.username %}">Profilim</a>
-      {% endif %}
-      <span style="float: right;">
-	{% if user.is_authenticated %}       
-	  selam <b>{{ request.user }}</b>
-	  <a href="{% url 'users:logout_path' %}">çıkış</a>
-	{% else %}
-	  selam ziyaretçi <a href="{% url 'users:login_path' %}">giriş</a>
-	  <a href="{% url 'users:signup_path' %}">kayıt</a>
-	{% endif %}
-      </span>
-      <hr />
-    </header>
-    <div id="main">
-      {% block content %}{% endblock %}
+    <div id="searchform">
+      <form method="post" class="search" action="">
+	<p>
+	  <input name="pojam" class="text" id="pojam" type="text" />
+	  <input name="search" class="button" value="Search" type="submit" />
+	</p>
+      </form>
     </div>
-    <footer>
-    </footer>
-  </body>
-</html>
+  </div>
+  
+  <div class="leftarticle">
+    <p>python programcıları derneği...</p>
+  </div>
+
+  
+  
+  <div class="leftarticle_ad"><a href="http://pythontr.net">FORUM</a></div>
+  <div class="leftarticle_ad"><a href="http://www.odev-destek.com">ODEV-DESTEK</a></div>
+</div>
+	  </div>
+	  <div id="links">
+	    <p><center>Python Programcıları Derneği</center></p>
+	  </div>
+	</div>
+
+	<div id="additional">
+	  <p><b>Günün Sözü : </b>Bildiklerimin bir önemi yok. Önemli olan bilmediklerim...</p>
+	</div>
+	
+	<div id="whiteline"></div>
+	
+	<footer>
+	  {% include 'footer.html' %}
+	</footer>
+      </body>
+    </html>
+    

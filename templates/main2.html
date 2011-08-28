@@ -1,0 +1,49 @@
+{% load url from future %}
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    
+    <script>
+      function prettyPrint(){
+      /*
+         Sorunun etrafından dolaşmak için oluşturuldu.
+         Hiç bir iş yapmıyor.
+         Google syntax highlighter include edildiğinde "gerçek" 
+         prettyPrint() fonksiyonunu kullanıyor.
+      */
+      }
+    </script>
+    
+    <title>{% block title %}{% endblock %}</title>
+    {% block include %}{% endblock %}
+  </head>
+  <body onLoad="prettyPrint();">
+    <header>
+      <a href="{% url 'blog:index_path' %}">Anasayfa</a>
+      <a href="{% url 'links:index_path' %}">Bağlantılar</a>
+      <a href="{% url 'posts_feeds' %}">RSS / Gönderiler</a>
+      <a href="{% url 'documents_feeds' %}">RSS / Belgeler</a>
+      {% if request.user.is_authenticated %}
+      {{ request.user.get_profile.get_absolute_url }}
+       <a href="{% url 'users:profile_path' user.username %}">Profilim</a>
+      {% endif %}
+      <span style="float: right;">
+	{% if user.is_authenticated %}       
+	  selam <b>{{ request.user }}</b>
+	  <a href="{% url 'users:logout_path' %}">çıkış</a>
+	{% else %}
+	  selam ziyaretçi <a href="{% url 'users:login_path' %}">giriş</a>
+	  <a href="{% url 'users:signup_path' %}">kayıt</a>
+	{% endif %}
+      </span>
+      <hr />
+    </header>
+    <div id="main">
+      {% block content %}{% endblock %}
+    </div>
+    <footer>
+    </footer>
+  </body>
+</html>
