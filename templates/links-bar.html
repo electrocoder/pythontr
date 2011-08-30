@@ -1,21 +1,196 @@
 {% load url from future %}
 
-<a href="{% url 'blog:index_path' %}">
-  Ana Sayfa
-</a>
-<a href="{% url 'links:index_path' %}">
-  Bağlantılar
-</a>
-<a href="/visual-python-2">
-  Belgeler
-</a>
-<a href="/pygtk">
-  Videolar
-</a>
-<a href="{% url 'users:show_editors_path' %}">
-  Editörler
-</a>
+<!-- Start PureCSSMenu.com STYLE -->
+<style>
+#pcm{display:none;}
+ul.pureCssMenu ul{display:none}
+ul.pureCssMenu li:hover>ul{display:block}
+ul.pureCssMenu ul{position: absolute;left:-1px;top:98%;}
+ul.pureCssMenu ul ul{position: absolute;left:98%;top:-2px;}
+ul.pureCssMenu,ul.pureCssMenu ul {
+	margin:0px;
+	list-style:none;
+	padding:0px 2px 2px 0px;
+	background-color:#ffffff;
+	background-repeat:repeat;
+	border-color:#AAAAAA;
+	border-width:1px;
+	border-style:solid;
+}
+ul.pureCssMenu table {border-collapse:collapse}ul.pureCssMenu {
+	display:block;
+	zoom:1;
+	float: left;
+}
+ul.pureCssMenu ul{
+	width:126px;
+}
+ul.pureCssMenu li{
+	display:block;
+	margin:2px 0px 0px 2px;
+	font-size:0px;
+}
+ul.pureCssMenu a:active, ul.pureCssMenu a:focus {
+outline-style:none;
+}
+ul.pureCssMenu a, ul.pureCssMenu li.dis a:hover, ul.pureCssMenu li.sep a:hover {
+	display:block;
+	vertical-align:middle;
+	background-color:#ffffff;
+	border-width:0px;
+	border-color:#6655ff;
+	border-style:solid;
+	text-align:left;
+	text-decoration:none;
+	padding:4px;
+	_padding-left:0;
+	font:normal 11px Verdana;
+	color: #444444;
+	text-decoration:none;
+	cursor:default;
+}
+ul.pureCssMenu span{
+	overflow:hidden;
+}
+ul.pureCssMenu li {
+	float:left;
+}
+ul.pureCssMenu ul li {
+	float:none;
+}
+ul.pureCssMenu ul a {
+	text-align:left;
+	white-space:nowrap;
+}
+ul.pureCssMenu li.sep{
+	text-align:center;
+	padding:0px;
+	line-height:0;
+	height:100%;
+}
+ul.pureCssMenu li.sep span{
+	float:none;	padding-right:0;
+	width:5;
+	height:16;
+	display:inline-block;
+	background-color:#AAAAAA;	background-image:none;}
+ul.pureCssMenu ul li.sep span{
+	width:80%;
+	height:3;
+}
+ul.pureCssMenu li:hover{
+	position:relative;
+}
+ul.pureCssMenu li:hover>a{
+	background-color:#3F86C2;
+	border-color:#665500;
+	border-style:solid;
+	font:normal 11px Verdana;
+	color: #ffffff;
+	text-decoration:none;
+}
+ul.pureCssMenu li a:hover{
+	position:relative;
+	background-color:#3F86C2;
+	border-color:#665500;
+	border-style:solid;
+	font:normal 11px Verdana;
+	color: #ffffff;
+	text-decoration:none;
+}
+ul.pureCssMenu li.dis a {
+	color: #AAAAAA !important;
+}
+ul.pureCssMenu img {border: none;float:left;_float:none;margin-right:4px;width:16px;
+height:16px;
+}
+ul.pureCssMenu ul img {width:16px;
+height:16px;
+}
+ul.pureCssMenu img.over{display:none}
+ul.pureCssMenu li.dis a:hover img.over{display:none !important}
+ul.pureCssMenu li.dis a:hover img.def {display:inline !important}
+ul.pureCssMenu li:hover > a img.def  {display:none}
+ul.pureCssMenu li:hover > a img.over {display:inline}
+ul.pureCssMenu a:hover img.over,ul.pureCssMenu a:hover ul img.def,ul.pureCssMenu a:hover a:hover img.over{display:inline}
+ul.pureCssMenu a:hover img.def,ul.pureCssMenu a:hover ul img.over,ul.pureCssMenu a:hover a:hover img.def{display:none}
+ul.pureCssMenu a:hover ul{display:block}
+ul.pureCssMenu span{
+	display:block;
+	background-image:url({{ STATIC_URL }}img/arrv_anim_1.gif);
+	background-position:right center;
+	background-repeat: no-repeat;
+   padding-right:11px;}
+ul.pureCssMenu li:hover>a>span{	background-image:url({{ STATIC_URL }}img/arrv_anim_1o.gif);
+}
+ul.pureCssMenu a:hover span{	_background-image:url({{ STATIC_URL }}img/arrv_anim_1o.gif)}
+ul.pureCssMenu ul span,ul.pureCssMenu a:hover table span{background-image:url({{ STATIC_URL }}img/arr_double_1.gif)}
+ul.pureCssMenu ul li:hover > a span{	background-image:url({{ STATIC_URL }}img/arr_double_1o.gif);}
+ul.pureCssMenu table a:hover span{background-image:url({{ STATIC_URL }}img/arr_double_1o.gif)}
+</style>
+<!-- End PureCSSMenu.com STYLE -->
 
-<a href="/kodbankasi">
-  Python Kod Bankası
-</a>
+
+
+<!-- Start PureCSSMenu.com MENU -->
+<ul class="pureCssMenu pureCssMenum">
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/" title="ana sayfa"><span>Ana Sayfa</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/bizkimiz" title="bizkimiz">Biz Kimiz</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/anket" title="anket">Anketler</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/bagisyap" title="anket">Bağış Yap</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/iletisim" title="anket">İletişim</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/sitemap" title="anket">Site Map</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/visualpython" title="visualpython"><span>Visual Python</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/visualpython-1" title="visual-python-1">Visual Python 1.x</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/visualpython-2" title="visual-python-2">Visual Python 2.x</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/python" title="python"><span>Python</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/pygtk" title="pygtk">PyGTK</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/pyqt" title="pyqt">PyQT</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/tkinter" title="tkinter">Tkinter</a></li>
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/wxpython" title="wxpython">WxPython</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/pythonmobil" title="python mobil"><span>Python Mobil</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/pymobil" title="pymobil">PyMobil</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/pythonkodbankasi" title="python banka"><span>Python Kod Bankası</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/pycodebank" title="kodbank">Kod Bankası</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/download" title="download"><span>Download</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/download" title="Download">Download</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/yazilimmuhendisligi" title="yazilimmuhendisligi"><span>Yazilim Mühendisliği</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/yazilimmuhendisligi" title="yazilimmuhendisligi">Yazılım Mühendisliği</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+	<li class="pureCssMenui"><a class="pureCssMenui" href="/kitap" title="kitap"><span>Kitap</span><![if gt IE 6]></a><![endif]><!--[if lte IE 6]><table><tr><td><![endif]-->
+	<ul class="pureCssMenum">
+		<li class="pureCssMenui"><a class="pureCssMenui" href="/kitap" title="Kitap">Kitap</a></li>
+	</ul>
+	<!--[if lte IE 6]></td></tr></table></a><![endif]--></li>	
+</ul>
+<a id="pcm" href="http://www.purecssmenu.com/">CSS Drop Down Menu by PureCSSMenu.com</a>
+<!-- End PureCSSMenu.com MENU -->
+
+
+
+<!-- (c) 2009, PureCSSMenu.com -->
+
+
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+<br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
