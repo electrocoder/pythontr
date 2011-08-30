@@ -48,4 +48,4 @@ Yapılacaklar
 - Linklere beni ekle formu yapılacak. (Link modeline gözatılacak)
 - İletişim formu yapılacak. İstek ve şikayetler için.
 - AJAX nimetlerinden faydalınılabilir.
-- Blog sayfası düzenlenecek.
+- Blog sayfasında paragraflar sorunu düzeltilecek
