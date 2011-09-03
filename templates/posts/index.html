@@ -19,9 +19,13 @@
       /
       <a href="{{ post.topic.get_absolute_url }}">{{ post.topic.title }}</a>
       -
-      <a href="{% url 'users:profile_path' post.sender.username %}">
+      <a href="{% url 'users:profile_path' post.sender.username %}">	
 	{{ post.sender.username }}
       </a>
+       {% ifequal post.sender.username request.user.username %}
+        &nbsp;<a href="#">[Duzenle]</a>
+        <a href="#">[Sil]</a>
+      {% endifequal %}
     </h3>
     <p>
       {{ post.content|truncatewords:50 }}
