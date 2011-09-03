@@ -44,7 +44,7 @@ h1 a:hover {
 
 h2 {
 	margin: 8px 0 5px 0;
-	padding: 0;
+	padding-left: 10px;
 	font-size: 1.4em;
 	letter-spacing: -1px;
 	color: #808080;
@@ -193,7 +193,7 @@ img {
 
 #right {
 	float: right;
-	width: 505px;
+	width: 625px;
 	padding: 0 6px 0 10px;
 }
 
