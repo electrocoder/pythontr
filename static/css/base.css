@@ -109,7 +109,7 @@ div.wiki_box div.wiki_box_footer
 	position: relative;
 	height: 6px;
 	padding: 0 6px;
-	background-image: url(../img/box_corner_tr.gif);
+	background-image: url(/static/img/box_corner_tr.gif);
 	background-position: top right;
 	background-repeat: no-repeat;
 	overflow: hidden;
@@ -117,7 +117,7 @@ div.wiki_box div.wiki_box_footer
 
 div.wiki_box div.wiki_box_footer
 {
-	background-image: url(../img/box_corner_br.gif);
+	background-image: url(/static/img/box_corner_br.gif);
 }
 
 div.wiki_box div.wiki_box_header div.wiki_box_corner,
@@ -128,14 +128,14 @@ div.wiki_box div.wiki_box_footer div.wiki_box_corner
 	left: 0;
 	height: 6px;
 	width: 6px;
-	background-image: url(../img/box_corner_tl.gif);
+	background-image: url(/static/img/box_corner_tl.gif);
 	background-position: top left;
 	background-repeat: no-repeat;
 }
 
 div.wiki_box div.wiki_box_footer div.wiki_box_corner
 {
-	background-image: url(../img/box_corner_bl.gif);
+	background-image: url(/static/img/box_corner_bl.gif);
 }
 
 div.wiki_box div.wiki_box_header div.wiki_box_bar,
