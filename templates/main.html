@@ -129,6 +129,7 @@
     Merhaba {{ request.user }}
     <a href="{% url 'users:profile_path' request.user %}">Profilim</a>
     <a href="{% url 'users:logout_path' %}">Çıkış</a>
+    <a href="{% url 'blog:new_post_path' %}">Yeni Gönderi</a>
     {% else %}
     Merhaba ziyaretçi
     <a href="{% url 'users:login_path' %}">Giriş</a>
