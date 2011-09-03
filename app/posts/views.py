@@ -8,6 +8,7 @@ from django.views.decorators.cache import cache_page
 
 from django.http import Http404
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
 
 from pythontr.app.posts.forms import NewPostForm
 from pythontr.app.posts.models import Post, Topic, Tag
@@ -70,7 +71,9 @@ def show_posts_with_tag(request, slug):
         raise Http404
     
     return render(request,'posts/show_posts_with_tag.html', locals())
-    
+
+
+@permission_required('posts.add_post')
 @login_required    
 def new_post(request):
     """
