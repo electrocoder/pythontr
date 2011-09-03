@@ -11,7 +11,7 @@
 {% endif %}
 
 {% block content %}
-<h1>
+<h2>
   <a href="{{ post.get_absolute_url }}">
     {{ post.title }}
   </a>
@@ -23,7 +23,7 @@
   <a href="{% url 'users:profile_path' post.sender.username %}">
     {{ post.sender.username }}
   </a>
-</h1>
+</h2>
 
 <div>
   {% autoescape off %} {# düz html kodları kullanılabilecek. #}
