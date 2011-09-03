@@ -14,7 +14,9 @@
 <ul>
   {% for post in posts %}
   <p>
+ <div id="resim"></div>
     <h2>
+    	
       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
       /
       <a href="{{ post.topic.get_absolute_url }}">{{ post.topic.title }}</a>

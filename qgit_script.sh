@@ -1,4 +1,4 @@
 #!/bin/sh
 git add .
-git commit -m "bazı hataları giderdim"
+git commit -m "editorler icin ekleme yapildi"
 git push origin master
