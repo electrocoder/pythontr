@@ -6,6 +6,7 @@ from django.views.generic import DetailView
 from pythontr.app.posts.models import Post
 
 urlpatterns = patterns('pythontr.app.posts.views',
+                       url(r'^add/new_post/$', 'new_post', name = 'new_post_path'),
 
                        url(r'^$', 'index', name = 'index_path'),
                        url(r'^page/(?P<page>\d+)/$', 'index', name = 'index_path_page'),

@@ -1,0 +1,16 @@
+{% extends 'main.html' %}
+
+{% block title %} Yeni Gonderi {% endblock %}
+
+{% block content %}
+   <form method="POST"> {% csrf_token %}
+     <table>
+       <tr>
+	 {{ form.as_table }}
+	 <td>
+	   <input type="submit" value="Kaydet">
+	 </td>
+       </tr>
+     </table>
+   </form>
+{% endblock %}

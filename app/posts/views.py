@@ -2,10 +2,14 @@
 
 from django.shortcuts import render, redirect, get_object_or_404
 from django.core.paginator import Paginator, EmptyPage
+
 from django.core.urlresolvers import reverse
 from django.views.decorators.cache import cache_page
-from django.http import Http404
 
+from django.http import Http404
+from django.contrib.auth.decorators import login_required
+
+from pythontr.app.posts.forms import NewPostForm
 from pythontr.app.posts.models import Post, Topic, Tag
 
 #@cache_page(30)
@@ -67,4 +71,19 @@ def show_posts_with_tag(request, slug):
     
     return render(request,'posts/show_posts_with_tag.html', locals())
     
-    
+@login_required    
+def new_post(request):
+    """
+    Yeni gönderi ekleme formu.
+    """
+    if request.method == "POST":
+        form = NewPostForm(request.POST)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Gönderi eklenmiştir. Teşekkürler.')
+            return redirect(reverse('blog:index_path'))
+    else:
+        form = NewPostForm()
+
+        
+    return render(request, 'posts/new-post.html', locals())
