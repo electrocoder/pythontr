@@ -52,17 +52,12 @@ h2 {
 }
 
 #resim {
-    background: url("/static/img/male.jpg") no-repeat scroll left top;
     float: left;
     left: 4px;
-    margin-top: 25px !important;
-    padding: 0 20px 30px 0;
+    margin-top: 5px !important;
     position: relative;
     text-align: center;
     width: 120px;	
-}
-.yazar{
-    margin-top: 55px !important;
 }
 
 h2 a {

@@ -13,12 +13,11 @@
 
 <ul>
   {% for post in posts %}
-  <p>
     <div id="resim">
       {% if post.sender.get_profile.photo %}
       <img src="{{ post.sender.get_profile.photo.url }}" />
       {% else %}
-      <img src="{{ STATIC_URL}}img/varsayilanresim.png" />
+      <img src="{{ STATIC_URL}}img/male.jpg" />
       {% endif %}
     </div>
     <h2>
@@ -34,10 +33,11 @@
         &nbsp;<a href="#">[Duzenle]</a>
         <a href="#">[Sil]</a>
       {% endifequal %}
+      <br></br>
     </h2>
     <p>
       {{ post.content|truncatewords:50 }}
-    </p>
+   
   </p>
   {% endfor %}
 </ul>
