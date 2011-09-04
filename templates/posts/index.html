@@ -14,7 +14,13 @@
 <ul>
   {% for post in posts %}
   <p>
- <div id="resim"></div>
+    <div id="resim">
+      {% if post.sender.get_profile.photo %}
+      <img src="{{ post.sender.get_profile.photo.url }}" />
+      {% else %}
+      <img src="{{ STATIC_URL}}img/varsayilanresim.png" />
+      {% endif %}
+    </div>
     <h2>
     	
       <a href="{{ post.get_absolute_url }}">{{ post.title }}</a>
