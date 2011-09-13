@@ -12,6 +12,7 @@ from django.contrib.auth.decorators import permission_required
 
 from pythontr.app.posts.forms import NewPostForm
 from pythontr.app.posts.models import Post, Topic, Tag
+from django.contrib import messages
 
 #@cache_page(30)
 def index(request, page=1):

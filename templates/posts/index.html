@@ -11,11 +11,11 @@
   {% endfor %}
 {% endif %}
 
-<ul>
+
   {% for post in posts %}
     <div id="resim">
       {% if post.sender.get_profile.photo %}
-      <img src="{{ post.sender.get_profile.photo.url }}" />
+      <img src="{{ post.sender.get_profile.photo.url }}" width=47%; height=7%; />
       {% else %}
       <img src="{{ STATIC_URL}}img/male.jpg" />
       {% endif %}
@@ -35,12 +35,12 @@
       {% endifequal %}
       <br></br>
     </h2>
-    <p>
+    <div id="icerik">
       {{ post.content|truncatewords:50 }}
    
-  </p>
+  </div>
   {% endfor %}
-</ul>
+
 
 
 {% if page.has_previous %}
